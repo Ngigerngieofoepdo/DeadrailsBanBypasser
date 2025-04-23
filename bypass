@@ -10,3 +10,23 @@ local v0=string.char;local v1=string.byte;local v2=string.sub;local v3=bit32 or 
           \_Welcome to LuaObfuscator.com   (Alpha 0.10.9) ~  Much Love, Ferib 
 
 ]]--
+
+local function callback(Text)
+ if Text == "Button1 text" then
+  print ("Answer")
+elseif Text == ("Button2 text") then
+ print ("Answer2")
+ end
+end
+
+local NotificationBindable = Instance.new("BindableFunction")
+NotificationBindable.OnInvoke = callback
+--
+game.StarterGui:SetCore("SendNotification",  {
+ Title = "anticheat bypasser (NO BAN BY DEADRAILS)";
+ Text = "btw this also makes u immune to mod bans, have fun skid";
+ Icon = "";
+ Duration = 100;
+ Button1 = "W";
+ Callback = NotificationBindable;
+})
